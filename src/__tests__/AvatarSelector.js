@@ -1,7 +1,7 @@
 import React from 'react';
 import { mount, shallow, render } from 'enzyme';
-import App from '../components/App';
+import AvatarSelector from '../components/AvatarSelector';
 
 test('renders the app', () => {
-  render(<App />);
+  render(<AvatarSelector currentPersona='' />);
 });
