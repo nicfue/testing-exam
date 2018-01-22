@@ -8,3 +8,11 @@ it('should render <App /> without user', () => {
   const user = wrapper.state().currentPersona;
   expect(user).toBe('');
 });
+
+it('should render <App /> with user', () => {
+  const wrapper = shallow(<App />);
+  const persona = 'Nisse';
+  wrapper.setState({'currentPersona': persona});
+  const user = wrapper.state().currentPersona;
+  expect(user).toBe('Nisse');
+});
