@@ -8,9 +8,11 @@ cache:
 script:
   - npm run build
   - npm test
+  - yarn test --coverage && cat ./coverage/lcov.info | coveralls
 deploy:
   provider: pages
   skip_cleanup: true
   github_token: $GITHUB_TOKEN
+  local-dir: build
   on:
     branch: master
