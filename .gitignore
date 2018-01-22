@@ -2,9 +2,10 @@
 
 # dependencies
 /node_modules
+/coverage
+
 
 # testing
-/coverage
 
 # production
 /build
