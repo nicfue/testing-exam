@@ -8,8 +8,10 @@ it('should render <App /> without user', () => {
   expect(wrapper.find('.user').exists()).toBeFalsy();
 });
 
-it('populate with fake posts', () => {
-  const fakePosts = setCommentsFromLocalStorage(fakePosts.data);
-  const wrapper = shallow(<App dat)
+it.skip('populate with fake posts', () => {
+  const fakePosts = setCommentsFromLocalStorage(fakePosts.fakePosts);
+  const wrapper = shallow(<App data={fakePosts} />);
+  const posts = wrapper.find()
+
 
 })
