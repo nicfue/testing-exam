@@ -9,7 +9,7 @@ it('should render <App /> without user', () => {
   expect(user).toBe('');
 });
 
-it('should render <App /> with user', () => {
+it('Render <App /> with user', () => {
   const wrapper = shallow(<App />);
   const persona = 'Nisse';
   wrapper.setState({'currentPersona': persona});
@@ -17,7 +17,7 @@ it('should render <App /> with user', () => {
   expect(user).toBe('Nisse');
 });
 
-it('Should render App default page', () => {
+it('Render App default page', () => {
   const wrapper = shallow(<App />);
   const { currentPage } = wrapper.state();
   expect(currentPage).toBe('home');
