@@ -11,20 +11,20 @@ beforeEach(() =>{
 
 const comments = [
   {
-    comment: "blabla",
-    id: "1",
-    postId: 1,
-    author: "Esmeralda",
-    date: "2018-01-24",
-    currentPersona: "Esmeralda"
+    comment: "aaa",
+    id: "_9hm78a06c",
+    postId: "565ddy34",
+    author: "Zac",
+    date: "2018-01-24 13:55:42",
+    currentPersona: "Zac"
   }
 ];
   // leave this for now
 it.skip('show comment list', () => {
-const wrapper = mount(<Comments postId="1" currentPersona="Esmeralda" author="Esmeralda" />);
+const wrapper = mount(<Comments postId="565ddy34" currentPersona="Zac" author="Zac" />);
   wrapper.setState({ comments });
   wrapper.instance().renderCommentList(comments);
-  expect(wrapper.find('SingleComment').text()).toEqual("blabla");
+  expect(wrapper.find('SingleComment').text()).toEqual("aaa");
 })
 
 
