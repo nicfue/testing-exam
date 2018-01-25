@@ -26,10 +26,3 @@ const wrapper = mount(<Comments postId="565ddy34" currentPersona="Zac" author="Z
   wrapper.instance().renderCommentList(comments);
   expect(wrapper.find('SingleComment').text()).toEqual("aaa");
 })
-
-
-xit('removes a comment', () => {
-  const commentList = require('../components/Comments');
-  commentList.removeComment(1);
-  expect(commentList.renderCommentList()).toHaveLength(3)
-})
