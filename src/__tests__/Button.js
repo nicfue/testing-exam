@@ -3,24 +3,28 @@ import { mount, shallow, render } from 'enzyme';
 import Button from '../components/Button';
 
 describe('button test', () => {
-  const btn = shallow(<Button onClick={() => {}} />);
-  const btnClick = jest.fn();
-  const button = shallow(<Button onClick={btnClick}></Button>)
-  const dangerButton = shallow(<Button danger onClick={btnClick}></Button>)
+  const mockCallback = jest.fn();
+  const btn = shallow(<Button onClick={mockCallback}></Button>)
+  const dangerBtn = shallow(<Button danger onClick={mockCallback}></Button>)
+
 
  it('check if button exists', () => {
-   expect(btn.exists()).toBeTruthy();
+   expect(btn.exists()).toBe(true);
  });
 
- it('check if button works onClick', () => {
-     button.simulate('click');
-     expect(btnClick).toBeDefined();
+ it('button should work when clicked', () => {
+   btn.find('[data-test="button"]').simulate('click');
+   console.log(mockCallback.mock.calls.length);
+   expect(mockCallback.mock.calls.length).toEqual(1);
  })
- it('button snapshot should match default button', () => {
-   expect(button).toMatchSnapshot();
- })
- it('button snapshot should match default button', () => {
-   expect(dangerButton).toMatchSnapshot();
- })
-});
 
+ it('button snapshot should match default button', () => {
+   expect(btn).toMatchSnapshot();;
+ })
+
+ it('button snapshot should match danger default button', () => {
+   expect(dangerBtn).toMatchSnapshot();
+ })
+
+
+});

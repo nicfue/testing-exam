@@ -1,5 +1,13 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`button test button snapshot should match danger default button 1`] = `
+<button
+  className="bg-red-dark hover:bg-red-darker text-white font-bold py-2 px-4 rounded-full "
+  data-test="button"
+  onClick={[Function]}
+/>
+`;
+
 exports[`button test button snapshot should match default button 1`] = `
 <button
   className="bg-indigo-dark hover:bg-indigo-darker text-white font-bold py-2 px-4 rounded-full "
