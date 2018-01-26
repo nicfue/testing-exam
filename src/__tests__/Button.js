@@ -4,8 +4,8 @@ import Button from '../components/Button';
 
 describe('button test', () => {
   const mockCallback = jest.fn();
-  const btn = shallow(<Button onClick={mockCallback}></Button>)
-  const dangerBtn = shallow(<Button danger onClick={mockCallback}></Button>)
+  const btn = shallow(<Button onClick={mockCallback}><p></p></Button>)
+  const dangerBtn = shallow(<Button danger onClick={mockCallback}><p></p></Button>)
 
 
  it('check if button exists', () => {
@@ -14,7 +14,6 @@ describe('button test', () => {
 
  it('button should work when clicked', () => {
    btn.find('[data-test="button"]').simulate('click');
-   console.log(mockCallback.mock.calls.length);
    expect(mockCallback.mock.calls.length).toEqual(1);
  })
 

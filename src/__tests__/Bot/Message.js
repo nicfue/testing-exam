@@ -1,7 +1,10 @@
 import React from 'react';
 import { mount, shallow, render } from 'enzyme';
-import Message from '../Bot/Message';
+import Message from '../../components/Bot/Message';
 
-test.skip('renders the app', () => {
-  render(<Message />);
+it('should render message', () => {
+  const fakeMessage = 'Hejhopp!'
+  const wrapper = mount(<Message bot={false}  message={fakeMessage} />);
+  expect(wrapper.find('p').text()).toBe(fakeMessage);
+  console.log(fakeMessage);
 });
