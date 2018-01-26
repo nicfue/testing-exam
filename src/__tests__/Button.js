@@ -17,9 +17,15 @@ describe('button test', () => {
    console.log(mockCallback.mock.calls.length);
    expect(mockCallback.mock.calls.length).toEqual(1);
  })
+ it('render default button', () => {
+   expect(btn.find('button').hasClass('bg-indigo-dark')).toBe(true);
+ })
+ it('render danger button', () => {
+   expect(dangerBtn.find('button').hasClass('bg-red-dark')).toBe(true);
+ })
 
  it('button snapshot should match default button', () => {
-   expect(btn).toMatchSnapshot();;
+   expect(btn).toMatchSnapshot();
  })
 
  it('button snapshot should match danger default button', () => {
