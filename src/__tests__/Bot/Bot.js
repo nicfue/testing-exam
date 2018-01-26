@@ -1,6 +1,6 @@
 import React from 'react';
 import { mount, shallow, render } from 'enzyme';
-import Bot from '../../Components/Bot/Bot';
+import Bot from '../../components/Bot/Bot';
 
 it('renders message on screen', () => {
   const wrapper = shallow(<Bot />);
