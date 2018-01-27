@@ -1,14 +1,8 @@
 import React from 'react';
-import { mount, shallow, render } from 'enzyme';
+import { mount } from 'enzyme';
 import Comments from '../components/Comments';
 import * as api from '../api';
 
-
-
-
-beforeEach(() =>{
-  localStorage.clear();
-});
 
 describe('testing comments', () => {
   const wrapper = mount(<Comments
@@ -16,7 +10,11 @@ describe('testing comments', () => {
     currentPersona="fakeName"
   />)
 
-  it('show comment list', () => {
+  it('render comment component', () => {
+    expect(wrapper.state()).toBeDefined()
+  })
+
+  it('render comment', () => {
     const comments = [
       {
         author: 'Zac',
@@ -29,14 +27,20 @@ describe('testing comments', () => {
     ];
 
     wrapper.setState({ comments });
-    expect(wrapper.find('SingleComment').text()).toContain("test comment");
+    expect(wrapper.state().comments[0].comment).toContain("test comment");
   })
 
-it('render comments', () => {
-  expect(wrapper).toBeDefined()
-})
+  const inst = wrapper.instance();
 
+  it('call function removeComment from api', () => {
+    api.removeComment = jest.fn();
+    inst.removeComment()
+    expect(api.removeComment).toHaveBeenCalled();
+  })
 
+  it('snapshot of comment', ()=> {
+    expect(wrapper).toMatchSnapshot();
+  })
 
 
 });
