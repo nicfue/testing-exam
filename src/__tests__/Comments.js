@@ -10,21 +10,33 @@ beforeEach(() =>{
   localStorage.clear();
 });
 
-describe('Unit test on comments', () => {
-const comment = jest.fn();
-const wrapper = mount(<Comments
-  comment="aaa"
-  // id="_9hm78a06c"
-  postId="565ddy34"
-  // author="Zac"
-  // date="2018-01-24 13:55:42"
-  currentPersona="Zac"
-  // onClick={comment}
+describe('testing comments', () => {
+  const wrapper = mount(<Comments
+    postId="1"
+    currentPersona="fakeName"
+  />)
 
-/>)
+  it('show comment list', () => {
+    const comments = [
+      {
+        author: 'Zac',
+        comment: 'test comment',
+        date: '00000000',
+        id: '1',
+        postId: '1',
+        currentPersona: ''
+      }
+    ];
 
-it.skip('show comment list', () => {
-  expect(wrapper.find('comment').text()).toEqual("aaa");
+    wrapper.setState({ comments });
+    expect(wrapper.find('SingleComment').text()).toContain("test comment");
+  })
+
+it('render comments', () => {
+  expect(wrapper).toBeDefined()
 })
+
+
+
 
 });
