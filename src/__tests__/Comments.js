@@ -23,7 +23,7 @@ const wrapper = mount(<Comments
 
 />)
 
-it('show comment list', () => {
+it.skip('show comment list', () => {
   expect(wrapper.find('comment').text()).toEqual("aaa");
 })
 
