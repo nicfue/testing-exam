@@ -15,7 +15,7 @@ exports[`testing comments snapshot of comment 1`] = `
     </h2>
     <SingleComment
       author="Zac"
-      comment="comment test"
+      comment="test comment"
       currentPersona=""
       date="00000000"
       id="1"
@@ -30,7 +30,7 @@ exports[`testing comments snapshot of comment 1`] = `
         <p
           className="text-grey-darker mb-4"
         >
-          comment test
+          test comment
         </p>
         <p
           className="text-grey-dark mb-4"
