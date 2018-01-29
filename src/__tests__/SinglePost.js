@@ -2,9 +2,9 @@ import React from 'react';
 import { mount, shallow, render } from 'enzyme';
 import SinglePost from '../components/SinglePost';
 
-describe('Unit test on SinglePost', ()=>{
+describe('Unit test on SinglePost', () =>{
   const post = jest.fn();
-  const wrapper1 = mount(<SinglePost
+  const wrapper = mount(<SinglePost
     title="heading"
     content="text"
     id="testId"
@@ -12,41 +12,35 @@ describe('Unit test on SinglePost', ()=>{
     currentPersona="Zac"
     date="0000000"
     onClick={post}
-    />)
+  />)
 
-    const wrapper2 = mount(<SinglePost
-      title="heading"
-      content="text"
-      id="testId"
-      author="Zac"
-      currentPersona="Morgana"
-      date="0000000"
-      onClick={post}
-      />)
+  it('should invoke onClick with id', () =>{
+    wrapper.find('[data-test="button"]').simulate('click')
+    expect(post).toHaveBeenCalledWith('testId');
+  });
 
 it('if author and currentPersona is the same, then the button should render', () => {
-  expect(wrapper1.find('Button').length).toEqual(1);
+  expect(wrapper.find('Button').length).toEqual(1);
 })
 
 it('if author and currentPersona are not the same, then the button should not render', () => {
-  expect(wrapper2.find('Button').length).toEqual(0);
+  wrapper.setProps({ currentPersona: 'Esmeralda'})
+  expect(wrapper.find('Button').length).toEqual(0);
  })
 
- it('snapshots when match', ()=> {
-   expect(wrapper1).toMatchSnapshot();
+ it('snapshots when match', () => {
+   expect(wrapper).toMatchSnapshot();
  })
 
- it('snapshots when mismatch', ()=> {
-   expect(wrapper2).toMatchSnapshot();
+ it('snapshots when mismatch', () => {
+   wrapper.setProps({ currentPersona: 'Esmeralda'})
+   expect(wrapper).toMatchSnapshot();
  })
+
 
  it('posts should contain a title and content', () => {
-   expect(wrapper1.find('article h2').text()).toEqual('heading')
+   expect(wrapper.find('article h2').text()).toEqual('heading')
  })
 
- it('test onclick with id', ()=>{
-   wrapper1.find('button').simulate('click');
-   expect(post).toBeCalledWith('testId');
- });
 
 })
