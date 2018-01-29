@@ -8,7 +8,9 @@ it('renders the message on the screen', () => {
   expect(wrapper.html()).toContain('Message');
 });
 
-it.skip('WHAT TO DO?', () => {
+it('set message as state on submit',() => {
   const wrapper = shallow(<Bot />);
-
-})
+  wrapper.instance().onSubmit('Message');
+  expect(wrapper.state().messages[0]).toEqual({message: 'Message', bot:false});
+  expect(wrapper.state().messages).toHaveLength(1);
+});
