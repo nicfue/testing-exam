@@ -2,6 +2,6 @@ import React from 'react';
 import { mount, shallow, render } from 'enzyme';
 import SingleComment from '../components/SingleComment';
 
-test.skip('renders the app', () => {
+it.skip('bla bla just nu', () => {
   render(<SingleComment />);
 });
