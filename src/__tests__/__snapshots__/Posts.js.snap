@@ -1,0 +1,12 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`testing posts component snapshot of comment 1`] = `
+<div
+  className="flex flex-wrap mx-auto pt-8"
+>
+  <CreateNewPost
+    author="Zac"
+    updatePosts={[Function]}
+  />
+</div>
+`;
