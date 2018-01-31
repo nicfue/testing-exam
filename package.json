@@ -39,7 +39,8 @@
       "!src/fakePosts.js",
       "!src/registerServiceWorker.js",
       "!src/index.js",
-      "!src/api/index.js"
+      "!src/api/index.js",
+      "!src/components/Bot/TypingIndicator.js"
     ]
   },
   "homepage": "https://nicfue.github.io/testing-exam"

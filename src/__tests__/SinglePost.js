@@ -20,12 +20,12 @@ describe('Unit test on SinglePost', () =>{
   });
 
   it('if author and currentPersona is the same, then the button should render', () => {
-    expect(wrapper.find('Button').length).toEqual(1);
+    expect(wrapper.find('[data-test="button"]').length).toEqual(1);
   })
 
   it('if author and currentPersona are not the same, then the button should not render', () => {
     wrapper.setProps({ currentPersona: 'Esmeralda'})
-    expect(wrapper.find('Button').length).toEqual(0);
+    expect(wrapper.find('[data-test="button"]').length).toEqual(0);
   })
 
   it('snapshots when match', () => {

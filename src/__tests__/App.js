@@ -1,32 +1,38 @@
 import React from 'react';
-import { shallow, mount } from 'enzyme';
+import { shallow } from 'enzyme';
 import App from '../components/App';
 
-it('should render <App /> without user', () => {
-  const wrapper = shallow(<App />);
-  const user = wrapper.state().currentPersona;
-  expect(user).toBe('');
-});
 
-it('Render <App /> with user', () => {
+describe('tesing <App />', () => {
   const wrapper = shallow(<App />);
-  const persona = 'Nisse';
-  wrapper.setState({'currentPersona': persona});
-  const user = wrapper.state().currentPersona;
-  expect(user).toBe('Nisse');
-});
 
-it('Render App default page', () => {
-  const wrapper = shallow(<App />);
-  const { currentPage } = wrapper.state();
-  expect(currentPage).toBe('home');
-});
+  it('should render App without user', () => {
+    const user = wrapper.state().currentPersona;
+    expect(user).toBe('');
+  });
 
-it('Change page from home to bot', () => {
-  const wrapper = mount(<App />);
-  const { currentPage:defaultPage} = wrapper.state();
-  expect(defaultPage).toBe('home');
-  wrapper.instance(defaultPage).changePage();
-  const { currentPage } = wrapper.state();
-  expect(currentPage).toBe('bot');
-});
+  it('Render App with user', () => {
+    const persona = 'Nisse';
+    wrapper.setState({'currentPersona': persona});
+    const user = wrapper.state().currentPersona;
+    expect(user).toBe('Nisse');
+  });
+
+  it('App should contain "Talk to a real human"',() =>{
+    expect(wrapper.contains('Talk to a real human')).toBeTruthy();
+  });
+
+  it('Render App default page', () => {
+    const { currentPage } = wrapper.state();
+    expect(currentPage).toBe('home');
+  });
+
+  it('should call the function "changePage"', () => {
+    expect(wrapper.instance().changePage());
+  });
+
+  it('button snapshot should match danger default button', () => {
+    expect(wrapper).toMatchSnapshot();
+  })
+
+})

@@ -16,23 +16,15 @@ describe('testing posts component', () => {
   ];
 
 
-  it('post should have a content', () => {
+  it('post should have a title, content, id, and author', () => {
     const wrapper = shallow(<Posts currentPersona="Zac" />)
     wrapper.setState({ posts });
-    expect(wrapper.state().posts[0].content).toContain("content");
+    expect(wrapper.state().posts[0].content).toEqual("content");
+    expect(wrapper.state().posts[0].title).toEqual("heading");
+    expect(wrapper.state().posts[0].id).toEqual("testId");
+    expect(wrapper.state().posts[0].author).toEqual("Zac");
   })
 
-  it('post should have a title', () => {
-    const wrapper = shallow(<Posts currentPersona="Zac" />)
-    wrapper.setState({ posts });
-    expect(wrapper.state().posts[0].title).toContain("heading");
-  })
-
-  it('post should have an author', () => {
-    const wrapper = shallow(<Posts currentPersona="Zac" />)
-    wrapper.setState({ posts });
-    expect(wrapper.state().posts[0].author).toContain("Zac");
-  })
 
   it('snapshot of comment', ()=> {
     const wrapper = shallow(<Posts currentPersona="Zac" />)

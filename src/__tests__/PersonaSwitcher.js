@@ -7,4 +7,5 @@ it('should switch image to Zac', () => {
   const currentPersona = 'Zac'
   const wrapper = mount(<PersonaSwitcher currentPersona={currentPersona} changePersona={personaSwitch} />) ;
   expect(wrapper.find('select').prop('value')).toEqual(currentPersona);
+  console.log(wrapper.find('select').prop('value'));
 })
