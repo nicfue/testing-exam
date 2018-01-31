@@ -1,7 +1,6 @@
 import React from 'react';
-import { shallow, mount, render } from 'enzyme';
+import { shallow, mount } from 'enzyme';
 import App from '../components/App';
-import fakePosts from '..//fakePosts';
 
 it('should render <App /> without user', () => {
   const wrapper = shallow(<App />);
@@ -18,7 +17,7 @@ it('Render <App /> with user', () => {
 });
 
 it('Render App default page', () => {
-  const wrapper = shallow(<App />); 
+  const wrapper = shallow(<App />);
   const { currentPage } = wrapper.state();
   expect(currentPage).toBe('home');
 });

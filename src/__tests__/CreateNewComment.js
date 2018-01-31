@@ -1,5 +1,5 @@
 import React from 'react';
-import { mount, shallow, render } from 'enzyme';
+import { mount, shallow } from 'enzyme';
 import CreateNewComment from '../components/CreateNewComment';
 
 const newComment = mount(<CreateNewComment author='Esmeralda' postId="1" updateComments={() => { }} />);

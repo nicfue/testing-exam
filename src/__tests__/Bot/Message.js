@@ -1,5 +1,5 @@
 import React from 'react';
-import { mount, shallow, render } from 'enzyme';
+import { mount } from 'enzyme';
 import Message from '../../components/Bot/Message';
 
 it('should render message', () => {

@@ -6,7 +6,9 @@ exports[`button test button snapshot should match danger default button 1`] = `
   data-test="button"
   onClick={[Function]}
 >
-  <p />
+  <p>
+    test
+  </p>
 </button>
 `;
 
@@ -16,6 +18,8 @@ exports[`button test button snapshot should match default button 1`] = `
   data-test="button"
   onClick={[Function]}
 >
-  <p />
+  <p>
+    test
+  </p>
 </button>
 `;

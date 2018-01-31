@@ -1,5 +1,5 @@
 import React from 'react';
-import { mount, shallow, render } from 'enzyme';
+import { mount } from 'enzyme';
 import PersonaSwitcher from '../components/PersonaSwitcher';
 
 it('should switch image to Zac', () => {

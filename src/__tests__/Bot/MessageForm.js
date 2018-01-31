@@ -1,5 +1,5 @@
 import React from 'react';
-import { mount, shallow, render } from 'enzyme';
+import { mount } from 'enzyme';
 import MessageForm from "../../components/Bot/MessageForm";
 
 it('simulate submit', () => {
@@ -7,5 +7,5 @@ it('simulate submit', () => {
   const wrapper = mount(<MessageForm userMessage={fakeSubmit} onSubmit={fakeSubmit} />);
   wrapper.find("form").simulate("submit",{  fakeSubmit  });
   expect(fakeSubmit).toHaveBeenCalled();
-  
+
 });
