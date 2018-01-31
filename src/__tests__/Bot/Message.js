@@ -6,5 +6,4 @@ it('should render message', () => {
   const fakeMessage = 'Hejhopp!'
   const wrapper = mount(<Message bot={false}  message={fakeMessage} />);
   expect(wrapper.find('p').text()).toBe(fakeMessage);
-  console.log(fakeMessage);
 });
