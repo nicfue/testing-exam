@@ -9,14 +9,14 @@ describe('testing create new post', () => {
 
   it('should create a new title', ()=>{
     const title = wrapper.find("#title");
-    title.simulate('change', {target: { name: 'title', value: 'testTitle'}});
-    expect(wrapper.state().title).toEqual('testTitle');
+    title.simulate('change', {target: { name: 'title', value: 'faketitle'}});
+    expect(wrapper.state().title).toEqual('faketitle');
     });
 
   it('should create new content', ()=>{
     const content = wrapper.find("#content")
-    content.simulate('change', {target: { name: 'content', value: 'testContent'}});
-    expect(wrapper.state().content).toEqual('testContent');
+    content.simulate('change', {target: { name: 'content', value: 'fakecontent'}});
+    expect(wrapper.state().content).toEqual('fakecontent');
     });
 
   it('testing submit', () => {

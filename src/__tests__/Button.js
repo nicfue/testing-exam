@@ -32,4 +32,5 @@ describe('button test', () => {
  it('button snapshot should match danger default button', () => {
    expect(dangerBtn).toMatchSnapshot();
  })
+
 });
